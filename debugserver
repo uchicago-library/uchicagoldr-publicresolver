@@ -1,0 +1,4 @@
+
+from ldrrestrictedresolver.ldrrestrictedresolverapp.app import app
+
+app.run()
