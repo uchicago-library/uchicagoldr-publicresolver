@@ -7,9 +7,7 @@ from os.path import join, exists
 from werkzeug.utils import secure_filename
 from re import compile as regex_compile
 from xml.etree import ElementTree as ET
-import requests
 from sys import stderr
-from urllib.parse import ParseResult
 
 from pypairtree.utils import identifier_to_path
 from ldrpremisbuilding.utils import *
@@ -29,27 +27,8 @@ API = Api(BP)
 def make_download_event(path_to_record, event_category, event_date, event_status, user, objid):
     event_message = "{} downlooaded the content".format(user)
     new_download_event = build_a_premis_event(event_category, event_date, event_status, event_message, user, objid)
-    print(path_to_record)
-    print(new_download_event)
     was_it_written = add_event_to_premis_record(path_to_record, new_download_event)
-    print(was_it_written)
     return was_it_written
-
-def load_json_from_url(url):
-    data = requests.get(url)
-    return r.json()
-
-def construct_url_to_get_a_user(userid):
-    a_url = ParseResult(scheme="https", netloc="y2.lib.uchicago.edu", path="/ldragents/agents/" + userid.strip(), query="term=" + user_query)
-    return a_url.geturl()
-
-def construct_url_to_search_for_matches(user_query):
-    a_url = ParseResult(scheme="https", netloc="y2.lib.uchicago.edu", path="/ldragents/agents", query="term=" + user_query.strip())
-    return a_url.geturl()
-
-def get_or_create_new_agent(user_query):
-    searching_user = construct_url_to_find_user(host_name, user_query)
-    pot_user_data = load_json_from_url(searching_user)
 
 def get_data_half_of_object(arkid, premisid, lp_path):
     arkid_path = str(identifier_to_path(arkid))
