@@ -1,6 +1,9 @@
-# Setup Instructions
+# Available Endpoints
 
-1. create a virtualenv for the code
-2. run 'python setup.py install' in each subdirectory of this code base
-3. add WSGIScriptAlias for the public resolver
+## /[accession identifier]/[object identifier]/content
 
+### Methods 
+
+#### GET
+
+This returns the content of a particular object in the repository.
