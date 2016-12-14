@@ -1,12 +1,12 @@
 from setuptools import setup
 
 setup(
-    name = 'ldrrestrictedresolver',
+    name = 'ldrresolver',
     version = '1.0.0',
     author = "Tyler Danstrom",
     author_email = ["tdanstrom@uchicago.edu"],
-    packages = ['ldrrestrictedresolver'],
-    description = "An application providing access to all content and metadata records in the ldr.",
+    packages = ['ldrresolver'],
+    description = "An appplication providing access to all public content in the ldr.",
     keywords = ["uchicago","repository","content retrieval"],
     classifiers = [
         "Programming Language :: Python",
