@@ -1,6 +1,6 @@
 # Available Endpoints
 
-## /[accession identifier]/[object identifier]/content
+## /[accession identifier]/[object identifier]
 
 ### Methods 
 
